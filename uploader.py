@@ -20,3 +20,4 @@ def upload_file_s3(file_path: Path, key: str) -> None:
     """Upload file to the s3"""
     file_path_str = str(file_path)
     s3.upload_file(file_path_str, BUCKET_NAME, key)
+    print(f'File is uploaded: https://storage.yandexcloud.net/{key}')

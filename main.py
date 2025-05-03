@@ -18,7 +18,6 @@ def main():
 
         for file in local_path.rglob('*'):
             if file.is_file():
-                # relative_path = file.relative_to(local_path)
                 key = get_file_key(file, parent_dir=local_path)
                 upload_file_s3(file, key)
 
