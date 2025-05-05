@@ -18,7 +18,7 @@ This script uploads a **file** or a **folder** to **Yandex S3 Cloud bucket**
 
 ## ⚙️ `.env` File Setup
 
-Create a .env file in the same folder as main.py, and add this:
+Create a `.env` file in the same folder as main.py, and add this:
 
 ```ini
 CLOUD_S3_ID_KEY=your_s3_access_key
