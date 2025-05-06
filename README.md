@@ -5,7 +5,7 @@ This script uploads a **file** or a **folder** to **Yandex S3 Cloud bucket**
 ## ✅ Requirements
 
 - Python 3.7+
-- AWS S3 access
+- Yandex Cloud S3 access
 - `.env` file with your credentials
 
 ## 📦 Installation
