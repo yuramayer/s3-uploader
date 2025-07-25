@@ -1,0 +1,23 @@
+/* Мягкий минимализм, воздушность, акцент на контент */
+body {
+    background: linear-gradient(to top left, #f9fafb, #f0f4f8);
+}
+
+#notification {
+    transition: all 0.3s ease;
+}
+
+.text-blue-700 {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.text-green-700 {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.text-red-700 {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
