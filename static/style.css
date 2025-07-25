@@ -1,0 +1,46 @@
+/* Мягкий минимализм, воздушность, акцент на контент */
+body {
+    background: linear-gradient(to top left, #f9fafb, #f0f4f8);
+}
+
+#notification {
+    transition: all 0.3s ease;
+}
+
+.text-blue-700 {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.text-green-700 {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.text-red-700 {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.spinner {
+    border: 4px solid #e5e7eb;
+    /* neutral background */
+    border-top: 4px solid #3b82f6;
+    /* blue top */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#dropzone.dragover {
+    background-color: #e0f2fe;
+    border-color: #3b82f6;
+}
