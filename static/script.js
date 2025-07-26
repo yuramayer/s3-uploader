@@ -1,8 +1,14 @@
+// аналог BeatifulSoup.select('#id') - 
+//      выбираем элементы на странице
 const dropzone = document.getElementById('dropzone');
 const input = document.getElementById('hidden-input');
 const note = document.getElementById('notification');
 
 // Хелпер — та же логика с загрузкой и спиннером
+// асинхронная обёртка:
+// показывает спиннер, ждёт promise,
+// минимум 2.5 секунды ждёт
+// и показывает v или x с текстом
 async function showSpinnerDuring(promise) {
     note.innerHTML = '<div class="spinner"></div>';
     note.classList.remove('hidden');
@@ -28,6 +34,7 @@ async function showSpinnerDuring(promise) {
     return result;
 }
 
+// fileList - аналог list[File] в js
 function uploadFileList(fileList) {
     const formData = new FormData();
     for (const file of fileList) {
