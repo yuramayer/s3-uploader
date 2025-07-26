@@ -1,9 +1,16 @@
 """Func for uploading the file to the s3"""
 
 from pathlib import Path
+import logging
 import boto3
 from botocore.config import Config
-from config import CLOUD_S3_ID_KEY, CLOUD_S3_SECRET_KEY, BUCKET_NAME
+from config import (
+    CLOUD_S3_ID_KEY,
+    CLOUD_S3_SECRET_KEY,
+    BUCKET_NAME
+)
+
+logger = logging.getLogger(__name__)
 
 
 s3 = boto3.client(
@@ -20,4 +27,5 @@ def upload_file_s3(file_path: Path, key: str) -> None:
     """Upload file to the s3"""
     file_path_str = str(file_path)
     s3.upload_file(file_path_str, BUCKET_NAME, key)
-    print(f'File is uploaded: https://storage.yandexcloud.net/{key}')
+    _link = f'https://storage.yandexcloud.net/{BUCKET_NAME}/{key}'
+    logger.info('File is uploaded: %s', _link)
