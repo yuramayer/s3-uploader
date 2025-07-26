@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>S3 Uploader</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>S3 Uploader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
+<body class="min-h-screen flex flex-col justify-between bg-stone-50 text-stone-800 font-sans">
 
-<body class="min-h-screen flex items-center justify-center bg-stone-50 text-stone-800 font-sans">
+  <!-- Верхняя часть страницы -->
+  <main class="flex-grow flex items-center justify-center">
     <div class="w-full max-w-md p-6 rounded-xl shadow-xl bg-white/70 backdrop-blur-md border border-stone-200">
-        <h1 class="text-center text-2xl font-semibold mb-6 tracking-tight">Upload to S3 ☁️</h1>
+      <h1 class="text-center text-2xl font-semibold mb-6 tracking-tight">Upload to S3</h1>
 
-        <!-- Drop Zone -->
-        <div id="dropzone"
-            class="border-2 border-dashed border-stone-300 rounded-xl p-10 text-center cursor-pointer transition-all hover:border-blue-400 hover:bg-blue-50 select-none">
-            <p class="text-stone-500">Drag & drop files or folders here</p>
-            <p class="text-sm text-stone-400">(or click to select)</p>
-            <input id="hidden-input" type="file" webkitdirectory directory multiple class="hidden">
-        </div>
+      <!-- Drop zone -->
+      <div id="dropzone" class="border-2 border-dashed border-stone-300 rounded-xl p-10 text-center cursor-pointer transition-all hover:border-blue-400 hover:bg-blue-50 select-none">
+        <p class="text-stone-500">Drag & drop files or folders here</p>
+        <p class="text-sm text-stone-400">(or click to select)</p>
+        <input id="hidden-input" type="file" webkitdirectory directory multiple class="hidden">
+      </div>
 
-        <!-- Notification -->
-        <div id="notification" class="mt-4 text-sm hidden text-center font-medium rounded-lg py-2 px-3"></div>
-
+      <!-- Notification -->
+      <div id="notification" class="mt-4 text-sm hidden text-center font-medium rounded-lg py-2 px-3"></div>
     </div>
+  </main>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <!-- Низ страницы -->
+  <footer class="w-full py-4 text-center">
+    <form action="{{ url_for('logout') }}" method="GET">
+      <button type="submit" class="text-sm text-blue-600 hover:underline font-medium tracking-wide">
+        Log Out
+      </button>
+    </form>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-
 </html>

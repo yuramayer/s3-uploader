@@ -44,3 +44,7 @@ body {
     background-color: #e0f2fe;
     border-color: #3b82f6;
 }
+
+button[type="submit"]:hover {
+    text-decoration: underline;
+}
