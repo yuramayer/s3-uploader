@@ -104,7 +104,7 @@ def logout():
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(_error):
     """Not Found Error logic"""
     return render_template('error.html', code=404,
                            message="Страница не найдена",
@@ -112,7 +112,7 @@ def page_not_found():
 
 
 @app.errorhandler(405)
-def method_not_allowed():
+def method_not_allowed(_error):
     """Not allowed error logic"""
     return render_template('error.html', code=405,
                            message="Метод не поддерживается",
@@ -120,10 +120,10 @@ def method_not_allowed():
 
 
 @app.errorhandler(500)
-def server_error():
+def server_error(_error):
     """500 Error logic"""
     return render_template('error.html', code=500,
-                           message="Что-то пошло не так",
+                           message="Что-то пошло не так. ",
                            link_text="Попробовать снова 🙏🏻"), 500
 
 
