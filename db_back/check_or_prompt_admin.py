@@ -4,6 +4,7 @@ import os
 import logging
 import sqlite3
 import bcrypt
+from config import ADMIN_LOGIN, ADMIN_PASSWORD
 
 
 logger = logging.getLogger(__name__)
@@ -42,16 +43,8 @@ def prompt_for_admin():
         "\n 🟢 В базе нет пользователей. "
         "Создаём первого администратора"
         )
-    while True:
-        username = input("Введите логин администратора: ").strip()
-        if not username:
-            logger.info("Логин не может быть пустым")
-            continue
-        password = input("Введите пароль: ").strip()
-        if len(password) < 4:
-            logger.info("Пароль слишком короткий")
-            continue
-        break
+    username = ADMIN_LOGIN
+    password = ADMIN_PASSWORD
 
     password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
 
