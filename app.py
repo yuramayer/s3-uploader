@@ -33,9 +33,6 @@ app = Flask(__name__)
 app.secret_key = 'REPLACE_WITH_A_SECURE_KEY'
 
 
-check_or_prompt_admin()
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     """Login web page logic (с проверкой из SQLite)"""
@@ -128,4 +125,5 @@ def server_error(_error):
 
 
 if __name__ == '__main__':
+    check_or_prompt_admin()
     app.run(debug=True)
