@@ -22,4 +22,4 @@ ENV FLASK_ENV=production
 EXPOSE 5000
 
 # команда запуска по умолчанию
-CMD ["sh", "-c", "python3 db_back/init_admin.py && gunicorn -w 4 -b 0.0.0.0:5000 app:app"]
+CMD ["sh", "-c", "python3 -m db_back.init_admin && gunicorn -w 4 -b 0.0.0.0:5000 app:app"]
