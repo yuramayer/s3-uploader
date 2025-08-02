@@ -10,7 +10,8 @@ services:
       - "5000"
     networks:
       - appnet
-
+    ports:
+      - "8080:5000"
   # nginx:
   #   image: nginx:1.25
   #   ports:
