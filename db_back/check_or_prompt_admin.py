@@ -39,7 +39,7 @@ def has_users() -> bool:
 
 def prompt_for_admin():
     """Add admin to the database if there's no any users in it"""
-    
+
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
